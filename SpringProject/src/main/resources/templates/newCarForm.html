@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body style="background-color: rgb(248, 248, 248);">
+    <div class="container mt-5 col-sm-6">
+        <h5 style="text-align: center;">New Car</h5>
+        <form th:action="@{/cars/newCar}" th:object="${car}" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="category">Category</label>
+                <input type="text" class="form-control" id="category" th:field="*{category}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="model">Model</label>
+                <input type="text" class="form-control" id="model" th:field="*{model}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" th:field="*{name}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="nbPlaces">Nb_places</label>
+                <input type="number" class="form-control" id="nbPlaces" th:field="*{nb_places}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" id="price" th:field="*{price}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Image</label>
+                <input type="file" class="form-control" id="image" th:field="*{image}" name="image" required="required">
+            </div>
+
+
+
+            
+
+            <button type="submit" class="btn btn-success">Add</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and other scripts if needed -->
+    <script src="/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
